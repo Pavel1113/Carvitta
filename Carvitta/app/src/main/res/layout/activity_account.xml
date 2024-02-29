@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D5D5D5"
+        android:backgroundTint="#EDEDED">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/showPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="155dp"
+        android:checked="false"
+        android:text="Показать" />
+
+    <TextView
+        android:id="@+id/acc_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#1E1E1E"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/acc_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="130dp"
+        android:text="TextView"
+        android:textColor="#1E1E1E"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/exit_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="400dp"
+        android:backgroundTint="#FF0000"
+        android:onClick="toMyAds"
+        android:text="Мои объявления"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="458dp"
+        android:backgroundTint="#FF0000"
+        android:onClick="exit"
+        android:text="Выход"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/acc_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="70dp"
+        android:text="TextView"
+        android:textColor="#1E1E1E"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/bottom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#7E5F5F"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleX="1.2"
+            android:scaleY="1.21"
+            android:onClick="toMain"
+            app:srcCompat="@drawable/allcarimgnoactive"
+            tools:srcCompat="@drawable/allcarimgnoactive" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:onClick="toAdd"
+            app:srcCompat="@drawable/addcarimgnoactive"
+            tools:srcCompat="@drawable/addcarimgnoactive" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            app:srcCompat="@drawable/accountimgactive"
+            tools:srcCompat="@drawable/accountimgactive" />
+
+    </LinearLayout>
+</RelativeLayout>

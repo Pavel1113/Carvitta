@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyCars">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/my_cars"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="19sp">
+
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_panel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#7E5F5F"
+            android:backgroundTint="#FFFFFF"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:scaleX="1.2"
+                android:scaleY="1.21"
+                app:srcCompat="@drawable/allcarimgactive"
+                tools:srcCompat="@drawable/allcarimgactive" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:onClick="toAdd"
+                app:srcCompat="@drawable/addcarimgnoactive"
+                tools:srcCompat="@drawable/addcarimgnoactive" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="toAccount"
+                android:scaleX="0.95"
+                android:scaleY="0.95"
+                app:srcCompat="@drawable/accountimgnoactive"
+                tools:srcCompat="@drawable/accountimgnoactive" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

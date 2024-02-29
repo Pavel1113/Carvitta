@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/markaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/alata"
+        android:text="Honda"
+        android:textColor="#303030"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/modelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/alata"
+        android:text="Accord"
+        android:textColor="#303030"
+        android:textSize="23sp"
+        app:layout_constraintStart_toEndOf="@+id/markaText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/priceBYNText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="15 000 р."
+        android:textColor="#303030"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/markaText" />
+
+    <TextView
+        android:id="@+id/priceDollarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:text="= 4000 $"
+        android:textColor="#505050"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/priceBYNText"
+        app:layout_constraintTop_toBottomOf="@+id/markaText" />
+
+    <TextView
+        android:id="@+id/informationText"
+        android:layout_width="392dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/alata"
+        android:maxLines="2"
+        android:text="Information"
+        android:textColor="#303030"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgImage1" />
+
+    <ImageView
+        android:id="@+id/imgImage1"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/shape"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceBYNText"
+        app:srcCompat="@drawable/carvittalogo" />
+
+    <ImageView
+        android:id="@+id/imgImage2"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/shape"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/imgImage1"
+        app:layout_constraintTop_toBottomOf="@+id/priceBYNText"
+        app:srcCompat="@drawable/carvittalogo" />
+
+    <TextView
+        android:id="@+id/isSelling"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="150dp"
+        android:fontFamily="monospace"
+        android:text="ПРОДАНО"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

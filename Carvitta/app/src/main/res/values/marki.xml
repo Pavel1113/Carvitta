@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="marki">
+        <item>BMW</item>
+        <item>Mercedes</item>
+        <item>Honda</item>
+    </string-array>
+</resources>

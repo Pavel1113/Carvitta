@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    html{
+      overflow-x: hidden;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  /* .back{
+    background: url("/back.jpg") rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    display: flex;
+    background-blend-mode: multiply;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+} */
+body {
+        background: url("https://i.ibb.co/h2hhw7z/back.jpg") rgba(0, 0, 0, 0.8);
+        background-size: cover;
+        
+    background-blend-mode: multiply;
+   
+    
+    width: 100%;
+    height: 100%;
+      }
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ed0101;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <h1>Login Page</h1>
+  <form action="/login" method="post">
+    <div>
+      <label for="username">Логин:</label>
+      <input type="text" name="username" id="username">
+    </div>
+    <div>
+      <label for="password">Пароль:</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <div>
+      <button type="submit">Войти</button>
+    </div>
+  </form>
+</body>
+</html>

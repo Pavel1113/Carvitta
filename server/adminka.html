@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Список пользователей</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      align-items: center;
+      font-size: 16px;
+      background-color: #ed0101;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 3px solid #ed0101;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    .no-users {
+      padding: 10px;
+      text-align: center;
+      color: #777;
+    }
+
+    .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+    .user-count {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+.user-tile {
+  display: inline-block;
+  width: 300px;
+  height: 120px;
+  
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+  </style>
+</head>
+
+<body>
+  <h1>===|   Админ панель   |===</h1>
+  <div class="container">
+  <button style="margin: 10px;" id="getUsersButton">Показать пользователей</button>
+  <button style="margin: 10px;" id="getProductButton">Показать объявления</button>
+  <!-- <form method="post" action="/exitFromAdminPanel"> -->
+  <button style="margin: 10px;" id="exit">Выход</button>
+  </form>
+  </div>
+  <ul id="userList"></ul>
+  <div id="userCount" class="user-count"></div>
+<script>
+  
+  $(document).ready(function () {
+    $("#getUsersButton").click(function () {
+      // Выполнение POST-запроса
+      var data = {"p_isAuth":0}
+      var json = JSON.stringify(data);
+      $.post({
+        url: "http://localhost:5559/getAllUsers",
+        data: json,
+        dataType: 'json', // Ожидаем JSON в ответе
+        success: function (data) {
+          // Обработка полученных данных
+          const users = data;
+console.log("all users");
+const userList = $("#userList");
+const userCount = $("#userCount");
+userList.empty();
+userCount.empty();
+
+if (users.length > 0) {
+  users.forEach(user => {
+    const tileItem = $("<div class='user-tile'></div>");
+    tileItem.append("<div><strong>АЙДИ ПОЛЬЗОВАТЕЛЯ:</strong> " + user.id + "</div>");
+    tileItem.append("<div><strong>ЛОГИН ПОЛЬЗОВАТЕЛЯ:</strong> " + user.login + "</div>");
+    tileItem.append("<div><strong>ИМЯ ПОЛЬЗОВАТЕЛЯ:</strong> " + user.name + "</div>");
+    tileItem.append("<div><strong>ПАРОЛЬ:</strong> " + user.password.substring(0,5)+"*****" + "</div>");
+    tileItem.append("<div><strong>АВТОРИЗАЦИЯ:</strong> " + user.isAuth + "</div>");
+    userList.append(tileItem);
+  });
+  userCount.text("Количество пользователей: " + users.length);
+} else {
+  userList.append("<div class='no-users'>Нет пользователей</div>");
+  userCount.text("Количество пользователей: 0");
+}
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          console.log(xhr.statusText);
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#getProductButton").click(function () {
+      // Выполнение POST-запроса
+      var data = {"p_issell":0}
+      var json = JSON.stringify(data);
+      $.post({
+        url: "http://localhost:5559/getAllCars",
+        data: json,
+        dataType: 'json', // Ожидаем JSON в ответе
+        success: function (data) {
+          // Обработка полученных данных
+          var cars = data;
+          console.log("all users");
+          var userList = $("#userList");
+          var userCount = $("#userCount");
+          userList.empty();
+          userCount.empty();
+          if (cars.length > 0) {
+            for (var i = 0; i < cars.length; i++) {
+              var car = cars[i];
+              var listItem = $("<li></li>");
+              listItem.append("<strong>АЙДИ ОБЪЯВЛЕНИЯ:</strong> " + car.id);
+              listItem.append("<br>");
+              listItem.append("<strong>АЙДИ ВЛАДЕЛЬЦА ОБЪЯВЛЕНИЯ:</strong> " + car.usid);
+              listItem.append("<br>");
+              listItem.append("<strong>МАРКА:</strong> " + car.marka);
+              listItem.append("<br>");
+              listItem.append("<strong>МОДЕЛЬ:</strong> " + car.model);
+              listItem.append("<br>");
+              listItem.append("<strong>ЦЕНА:</strong> " + car.price);
+              listItem.append("<br>");
+              listItem.append("<strong>ГОД ВЫПУСКА:</strong> " + car.year);
+              listItem.append("<br>");
+              listItem.append("<strong>МЕХАНИКА/АВТОМАТ:</strong> " + car.mehauto);
+              listItem.append("<br>");
+              listItem.append("<strong>ОБЪЕМ ДВИГАТЕЛЯ:</strong> " + car.volume);
+              listItem.append("<br>");
+              listItem.append("<strong>ТИП ТОПЛИВА:</strong> " + car.typefuel);
+              listItem.append("<br>");
+              listItem.append("<strong>КУЗОВ:</strong> " + car.shape);
+              listItem.append("<br>");
+              listItem.append("<strong>ПРОБЕГ:</strong> " + car.distance);
+              listItem.append("<br>");
+              listItem.append("<strong>ФОТО 1:</strong> " + car.img);
+              listItem.append("<br>");
+              listItem.append("<strong>ФОТО 2:</strong> " + car.img2);
+              listItem.append("<br>");
+              listItem.append("<strong>МОБ. ТЕЛЕФОН:</strong> " + car.phone);
+              listItem.append("<br>");
+              listItem.append("<strong>ПРОДАНО(1 - ДА / 0-НЕТ):</strong> " + car.issell);
+              listItem.append("<br>");
+              userList.append(listItem);
+            }
+            userCount.text("Количество объявлений: " + cars.length);
+          } else {
+            userList.append("<li class='no-users'>Нет пользователей</li>");
+            userCount.text("Количество пользователей: 0");
+          }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          console.log(xhr.statusText);
+        }
+      });
+    });
+  });
+</script>
+<script>
+  
+  $(document).ready(function () {
+    $("#exit").click(function () {
+      $.get({
+        url: "http://localhost:5559/exit0",
+        
+        success: function (data) {
+          console.log("kjgfjfwwwwwwwww");
+          window.location.replace("http://localhost:5559/login");
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          console.log(xhr.statusText);
+        }
+      });
+    });
+  });
+</script>
+</body>
+
+</html>

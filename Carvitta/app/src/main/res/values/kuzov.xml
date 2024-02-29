@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kuzov">
+        <item>Седан</item>
+        <item>Универсал</item>
+        <item>Хэтчбэк</item>
+        <item>Купе</item>
+    </string-array>
+</resources>

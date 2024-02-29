@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="models">
+        <item>A-Класс</item>
+        <item>C-Класс</item>
+        <item>S-Класс</item>
+        <item>3-Серия</item>
+        <item>5-Серия</item>
+        <item>Accord</item>
+        <item>Civic</item>
+    </string-array>
+</resources>
